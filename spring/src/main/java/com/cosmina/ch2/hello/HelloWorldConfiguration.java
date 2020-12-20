@@ -12,7 +12,7 @@ public class HelloWorldConfiguration {
     }
 
     @Bean
-    public MessageRenderer renderer(){
+    public MessageRenderer renderer() {
         MessageRenderer renderer = new StandardOutMessageRenderer();
         renderer.setMessageProvider(provider());
         return renderer;
