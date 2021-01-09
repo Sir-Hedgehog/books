@@ -14,16 +14,16 @@ import javax.annotation.Resource;
 @Service("injectCollection")
 public class CollectionInjection {
 
-    @Resource(name="map")
+    @Resource(name = "map")
     private Map<String, Object> map;
 
-    @Resource(name="props")
+    @Resource(name = "props")
     private Properties props;
 
-    @Resource(name="set")
+    @Resource(name = "set")
     private Set set;
 
-    @Resource(name="list")
+    @Resource(name = "list")
     private List list;
 
     public void displayInfo() {

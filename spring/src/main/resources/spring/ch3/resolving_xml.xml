@@ -5,6 +5,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="johnMayer" class="com.cosmina.ch3.resolving_dependencies.xml.Singer" depends-on="gopher"/>
-    <bean id="gopher" class="com.cosmina.ch3.resolving_dependencies.xml.Guitar"/>
+    <bean id="johnMayer" class="com.cosmina.ch3.resolvingdependencies.xml.Singer" depends-on="gopher"/>
+    <bean id="gopher" class="com.cosmina.ch3.resolvingdependencies.xml.Guitar"/>
 </beans>

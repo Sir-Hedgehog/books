@@ -5,9 +5,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="oracle" name="wiseworm" class="com.cosmina.ch3.ref_injection.BookwormOracle"/>
+    <bean id="oracle" name="wiseworm" class="com.cosmina.ch3.refinjection.BookwormOracle"/>
 
-    <bean id="injectRef" class="com.cosmina.ch3.ref_injection.xml.InjectRef">
+    <bean id="injectRef" class="com.cosmina.ch3.refinjection.xml.InjectRef">
         <property name="oracle" ref="wiseworm"/>
     </bean>
 </beans>

@@ -5,13 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="singer" class="com.cosmina.ch3.lookup_method_injection.xml.Singer" scope="prototype"/>
+    <bean id="singer" class="com.cosmina.ch3.lookupmethodinjection.xml.Singer" scope="prototype"/>
 
-    <bean id="abstractLookupBean" class="com.cosmina.ch3.lookup_method_injection.xml.AbstractLookupDemoBean">
+    <bean id="abstractLookupBean" class="com.cosmina.ch3.lookupmethodinjection.xml.AbstractLookupDemoBean">
         <lookup-method name="getMySinger" bean="singer"/>
     </bean>
 
-    <bean id="standardLookupBean" class="com.cosmina.ch3.lookup_method_injection.xml.StandardLookupDemoBean">
+    <bean id="standardLookupBean" class="com.cosmina.ch3.lookupmethodinjection.xml.StandardLookupDemoBean">
         <property name="mySinger" ref="singer"/>
     </bean>
 </beans>

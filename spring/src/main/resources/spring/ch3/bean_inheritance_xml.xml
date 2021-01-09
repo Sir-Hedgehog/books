@@ -6,9 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="parent" class="com.cosmina.ch3.bean_inheritance.Singer"
+    <bean id="parent" class="com.cosmina.ch3.beaninheritance.Singer"
           p:name="John Mayer" p:age="39" />
 
-    <bean id="child" class="com.cosmina.ch3.bean_inheritance.Singer"
+    <bean id="child" class="com.cosmina.ch3.beaninheritance.Singer"
           parent="parent" p:age="0"/>
 </beans>

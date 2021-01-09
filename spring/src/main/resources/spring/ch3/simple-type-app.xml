@@ -7,7 +7,7 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
-    <bean id="injectSimple" class="com.cosmina.ch3.simple_types.xml.InjectSimple"
+    <bean id="injectSimple" class="com.cosmina.ch3.simpletypes.xml.InjectSimple"
           p:name="John Mayer"
           p:age="39"
           p:height="1.92"

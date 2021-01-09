@@ -5,13 +5,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="methodReplacer" class="com.cosmina.ch3.method_replacement.FormatMessageReplacer"/>
+    <bean id="methodReplacer" class="com.cosmina.ch3.methodreplacement.FormatMessageReplacer"/>
 
-    <bean id="replacementTarget" class="com.cosmina.ch3.method_replacement.ReplacementTarget">
+    <bean id="replacementTarget" class="com.cosmina.ch3.methodreplacement.ReplacementTarget">
         <replaced-method name="formatMessage" replacer="methodReplacer">
             <arg-type>String</arg-type>
         </replaced-method>
     </bean>
 
-    <bean id="standardTarget" class="com.cosmina.ch3.method_replacement.ReplacementTarget"/>
+    <bean id="standardTarget" class="com.cosmina.ch3.methodreplacement.ReplacementTarget"/>
 </beans>

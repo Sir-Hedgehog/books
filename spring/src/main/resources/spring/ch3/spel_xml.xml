@@ -6,9 +6,9 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="injectSimpleConfig" class="com.cosmina.ch3.simple_types.spel_annotation.InjectSimpleConfig"/>
+    <bean id="injectSimpleConfig" class="com.cosmina.ch3.simpletypes.spelannotation.InjectSimpleConfig"/>
 
-    <bean id="injectSimpleSpel" class="com.cosmina.ch3.simple_types.spel_xml.InjectSimpleSpel"
+    <bean id="injectSimpleSpel" class="com.cosmina.ch3.simpletypes.spelxml.InjectSimpleSpel"
           p:name="#{injectSimpleConfig.name}"
           p:age="#{injectSimpleConfig.age + 1}"
           p:height="#{injectSimpleConfig.height}"

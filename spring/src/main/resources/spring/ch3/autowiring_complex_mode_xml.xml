@@ -5,11 +5,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="fooOne" class="com.cosmina.ch3.bean_autowiring.xml.complicated.FooImplOne" primary="true"/>
-    <bean id="fooTwo" class="com.cosmina.ch3.bean_autowiring.xml.complicated.FooImplTwo"/>
-    <bean id="bar" class="com.cosmina.ch3.bean_autowiring.xml.Bar"/>
+    <bean id="fooOne" class="com.cosmina.ch3.beanautowiring.xml.complicated.FooImplOne" primary="true"/>
+    <bean id="fooTwo" class="com.cosmina.ch3.beanautowiring.xml.complicated.FooImplTwo"/>
+    <bean id="bar" class="com.cosmina.ch3.beanautowiring.xml.Bar"/>
 
-    <bean id="targetByType" autowire="byType" class="com.cosmina.ch3.bean_autowiring.xml.complicated.CTarget"
+    <bean id="targetByType" autowire="byType" class="com.cosmina.ch3.beanautowiring.xml.complicated.CTarget"
           lazy-init="true"/>
 
 </beans>

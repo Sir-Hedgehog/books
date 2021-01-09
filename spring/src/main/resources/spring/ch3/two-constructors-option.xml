@@ -11,7 +11,7 @@
           c:message="I hope that someone gets my message in a bottle"/>
 
     <bean id="constructorConfusion"
-          class="com.cosmina.ch3.two_constructors.ConstructorConfusion">
+          class="com.cosmina.ch3.twoconstructors.ConstructorConfusion">
         <constructor-arg type="int" value="90"/>
     </bean>
 </beans>

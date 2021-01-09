@@ -9,5 +9,5 @@
           http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan
-            base-package="com.cosmina.ch3.lookup_method_injection.annotation"/>
+            base-package="com.cosmina.ch3.lookupmethodinjection.annotation"/>
 </beans>
