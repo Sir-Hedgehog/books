@@ -1,10 +1,11 @@
-package com.cosmina.ch4.beanInitMethod;
+package com.cosmina.ch4.postConstruct;
 
+import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.BeanCreationException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class Singer {
+public class SingerWithJSR250 {
     private static final String DEFAULT_NAME = "Eric Clapton";
 
     private String name;
@@ -18,7 +19,8 @@ public class Singer {
         this.age = age;
     }
 
-    private void init() {
+    @PostConstruct
+    private void init() throws Exception {
         System.out.println("Initializing bean");
 
         if (name == null) {
@@ -28,7 +30,8 @@ public class Singer {
 
         if (age == Integer.MIN_VALUE) {
             throw new IllegalArgumentException(
-                    "You must set the age property of any beans of type " + Singer.class);
+                    "You must set the age property of any beans of type " +
+                            SingerWithJSR250.class);
         }
     }
 
@@ -38,7 +41,7 @@ public class Singer {
 
     public static void main(String... args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:spring/ch4/beanInitMethod/app-context-xml.xml");
+        ctx.load("classpath:spring/ch4/postConstruct/app-context-annotation.xml");
         ctx.refresh();
 
         getBean("singerOne", ctx);
@@ -48,13 +51,14 @@ public class Singer {
         ctx.close();
     }
 
-    public static Singer getBean(String beanName, ApplicationContext ctx) {
+    private static SingerWithJSR250 getBean(String beanName, ApplicationContext ctx) {
         try {
-            Singer bean = (Singer) ctx.getBean(beanName);
+            SingerWithJSR250 bean = (SingerWithJSR250) ctx.getBean(beanName);
             System.out.println(bean);
             return bean;
         } catch (BeanCreationException ex) {
-            System.out.println("An error occurred in bean configuration: " + ex.getMessage());
+            System.out.println("An error occured in bean configuration: "
+                    + ex.getMessage());
             return null;
         }
     }

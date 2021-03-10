@@ -1,10 +1,11 @@
-package com.cosmina.ch4.beanInitMethod;
+package com.cosmina.ch4.initializingBean;
 
 import org.springframework.beans.factory.BeanCreationException;
+import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-public class Singer {
+public class SingerWithInterface implements InitializingBean {
     private static final String DEFAULT_NAME = "Eric Clapton";
 
     private String name;
@@ -18,7 +19,7 @@ public class Singer {
         this.age = age;
     }
 
-    private void init() {
+    public void afterPropertiesSet() throws Exception {
         System.out.println("Initializing bean");
 
         if (name == null) {
@@ -28,7 +29,8 @@ public class Singer {
 
         if (age == Integer.MIN_VALUE) {
             throw new IllegalArgumentException(
-                    "You must set the age property of any beans of type " + Singer.class);
+                    "You must set the age property of any beans of type "
+                            + SingerWithInterface.class);
         }
     }
 
@@ -38,7 +40,7 @@ public class Singer {
 
     public static void main(String... args) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:spring/ch4/beanInitMethod/app-context-xml.xml");
+        ctx.load("classpath:spring/ch4/initializingBean/app-context-xml.xml");
         ctx.refresh();
 
         getBean("singerOne", ctx);
@@ -48,13 +50,15 @@ public class Singer {
         ctx.close();
     }
 
-    public static Singer getBean(String beanName, ApplicationContext ctx) {
+    private static SingerWithInterface getBean(String beanName,
+                                               ApplicationContext ctx) {
         try {
-            Singer bean = (Singer) ctx.getBean(beanName);
+            SingerWithInterface bean = (SingerWithInterface) ctx.getBean(beanName);
             System.out.println(bean);
             return bean;
         } catch (BeanCreationException ex) {
-            System.out.println("An error occurred in bean configuration: " + ex.getMessage());
+            System.out.println("An error occurred in bean configuration: "
+                    + ex.getMessage());
             return null;
         }
     }
